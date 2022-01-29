@@ -1,0 +1,7 @@
+.temperature{
+    text-align: right;
+}
+.wrapper{
+    background-image: url("../../assets/mumbai_bg.jpg");
+    height:530px;
+}
