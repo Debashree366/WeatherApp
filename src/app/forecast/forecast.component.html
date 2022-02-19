@@ -1,1 +1,28 @@
-<p>forecast works!</p>
+<div>
+        
+    <div class="row inputcity" >
+    <div class="form-group mt-2">              
+      <input type="text" class="form-control" [(ngModel)]="city" placeholder="Search City...">
+      
+    </div>            
+    <button type="submit" class="btn btn-primary searchbtn" (click)="getcitydata()">Search</button>
+    </div>
+  
+</div>
+<div class="d-flex p-1 scroll">
+  
+     <div class="mt-4 text-center" *ngFor="let item of forecastArr" style="width: 33%; margin: 15px">
+        <div class="day">{{item?.dt}}</div>
+        <div class="icon mt-2 mb-2 ">
+             <img src={{iconurl}}>
+        </div>
+      
+        <div class="minmax">
+            <span class="max mr-2">{{item?.main?.temp_min.toFixed(0)}} - </span>
+            <span class="min">{{item?.main?.temp_max.toFixed(0)}}</span>
+        </div>
+    </div>
+     
+  
+    
+</div>

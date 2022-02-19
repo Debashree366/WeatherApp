@@ -1,0 +1,17 @@
+.scroll{
+    overflow: scroll;
+    white-space: nowrap;
+    float: left;
+    width: 100%;
+    padding: 10px;
+}
+.inputcity{
+    padding: 10px;
+    margin: 10px;
+}
+.searchbtn{
+    padding: 10px;
+    margin: 10px;
+    height: 38px;
+    line-height: 17px;
+}

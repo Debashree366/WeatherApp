@@ -1,18 +1,33 @@
 <div class="wrapper">
+    <div>
+        
+            <div class="row inputcity" >
+            <div class="form-group mt-2">              
+              <input type="text" class="form-control" [(ngModel)]="city" placeholder="Search City...">
+              
+            </div>            
+            <button type="submit" class="btn btn-primary searchbtn" (click)="getcitydata()">Search</button>
+            </div>
+          
+    </div>
     <div class="row city">
         <div class="col-12">
-            <p class="text-center">Mumbai</p>
+            <p class="text-center">{{weatherdata?.name}}</p>
         </div>
     </div>
-    <div class="row justify-content-center">
+    <div class="row justify-content-center align-items-center">
         <div class="col-6">
-             <p class="temperature">12</p>
+             <p class="temperature">{{(weatherdata?.main?.temp | temperatureconverter : 'K')}} <span class="celcius">°</span>C</p>
+             <!-- <p class="temperature">{{61 | temperatureconverter : 'C'}}</p> -->
         </div>
         <div class="col-6">
+
               <div class="details">
-                <div><i class="fa fa-cloud" aria-hidden="true"></i>Partly cloudy</div>
-                <div><i class="fa fa-fighter-jet" aria-hidden="true"></i>mph</div>
-                <div><i class="fa fa-umbrella" aria-hidden="true"></i>0%</div>
+                <img [src]="iconurl">
+                  
+                <div><i class="fa fa-cloud mr-2" aria-hidden="true"></i>{{weatherdata?.weather[0]?.main}}</div>
+                <div><i class="fa fa-fighter-jet mr-2" aria-hidden="true"></i>{{weatherdata?.wind?.speed}}</div>
+                <div><i class="fa fa-umbrella mr-2" aria-hidden="true"></i>{{weatherdata?.main?.feels_like}}</div>
               </div>
         </div>
 
